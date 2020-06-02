@@ -32,9 +32,6 @@ def sanity_check(source, start, end, bands):
     # creating a image by selecting the first image from image collection
     single_img = ee.Image(img_collection.first())
 
-    # get metdata of the image
-    info = single_img.getInfo()
-
     # sorting the images
     first_img = ee.Image(img_collection.sort("system:time_start").first())
     last_img = ee.Image(img_collection.sort("system:time_start", False).first())
